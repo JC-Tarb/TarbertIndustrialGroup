@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tarbert Industrial Group</title>
+    <style>
+        /* General Styles */
+        body {
+            margin: 0;
+            font-family: 'Arial', sans-serif;
+            color: #fff;
+            background-color: #000;
+            overflow-x: hidden;
+            font-size: 18px; /* Increased base font size */
+        }
+
+        h1, h2, h3 {
+            font-family: 'Impact', 'Arial Black', sans-serif;
+            font-weight: bold;
+        }
+
+        h1 {
+            font-size: 3rem; /* Increased heading size */
+        }
+
+        h2 {
+            font-size: 2.5rem; /* Increased subheading size */
+        }
+
+        h3 {
+            font-size: 2rem; /* Increased smaller heading size */
+        }
+
+        p {
+            font-size: 1.25rem; /* Increased paragraph size */
+            line-height: 1.8; /* Improved readability */
+        }
+
+        .section {
+            height: auto; /* Adjusted to remove unnecessary spacing */
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            padding: 40px 20px; /* Reduced padding for tighter layout */
+        }
+
+        .section img {
+            max-width: 100%;
+            height: auto;
+        }
+
+        .hero {
+            background: url('2040165-4217050405.jpg') no-repeat center center/cover;
+            color: #fff;
+            position: relative;
+        }
+
+        .hero h1 {
+            font-size: 4rem;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
+        }
+
+        .hero .scroll-indicator {
+            position: absolute;
+            bottom: 20px;
+            left: 50%;
+            transform: translateX(-50%);
+            font-size: 1.5rem; /* Increased scroll indicator size */
+            color: #fff;
+            animation: bounce 2s infinite;
+        }
+
+        @keyframes bounce {
+            0%, 100% {
+                transform: translate(-50%, 0);
+            }
+            50% {
+                transform: translate(-50%, -10px);
+            }
+        }
+
+        .about {
+            background-color: #111;
+        }
+
+        .services {
+            background-color: #222;
+        }
+
+        .contact {
+            background-color: #333;
+        }
+
+        /* Footer Styles */
+        footer {
+            background-color: #333;
+            color: #fff;
+            padding: 20px;
+            text-align: center;
+        }
+
+        /* Header Styles */
+        header {
+            background-color: #333;
+            color: #fff;
+            padding: 10px 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .header-title {
+            font-size: 1.5rem;
+            font-weight: bold;
+        }
+
+        .header-icons {
+            display: flex;
+            gap: 15px;
+        }
+
+        .header-icons a {
+            color: #fff;
+            text-decoration: none;
+        }
+
+        .header-icons img {
+            width: 24px;
+            height: 24px;
+        }
+    </style>
+</head>
+<body>
+    <!-- Header Section -->
+    <header>
+        <div class="header-title">Tarbert Industrial Group</div>
+        <div class="header-icons">
+            <a href="https://www.facebook.com/profile.php?id=61582123003394" target="_blank">
+                <img src="f_logo_RGB-Blue_1024-3274466492.png" alt="Facebook" style="width: 24px; height: 24px;">
+            </a>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <div class="section hero" style="background: url('2040165-4217050405.jpg') no-repeat center center/cover; position: relative;">
+        <div style="background-color: rgba(0, 0, 0, 0.6); padding: 40px; border-radius: 10px; position: relative; z-index: 2;">
+            <h1>TARBERT INDUSTRIAL GROUP</h1>
+            <p>Forging solutions that meet today’s industrial scale</p>
+            <p>Located in Delta, PA</p>
+            <div class="scroll-indicator">Scroll Down ↓</div>
+        </div>
+        <div style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; background-color: rgba(0, 0, 0, 0.5); z-index: 1;"></div>
+    </div>
+
+    <!-- About and Services Section -->
+    <div class="section" style="display: flex; flex-wrap: wrap; align-items: flex-start; gap: 40px; padding: 40px; background-color: #111; color: #fff;">
+        <!-- About Us -->
+        <div style="display: flex; align-items: center; gap: 20px; flex-wrap: wrap; padding: 40px; background-color: #111; color: #fff;">
+            <div style="flex: 1;">
+                <h2>About Us</h2>
+                <p>Tarbert Industrial Group specializes in heavy equipment storage and comprehensive asset protection. We are committed to delivering solutions that meet the demands of modern industry.</p>
+                <p>Our facilities are equipped with cutting-edge technology to ensure the safety and security of your valuable assets. With years of experience in the industry, we pride ourselves on our reliability and dedication to excellence.</p>
+                <p>We offer 24-hour security and advanced asset protection measures, ensuring your equipment is safeguarded around the clock. Our services are not only top-notch but also affordable, making us the trusted choice for businesses of all sizes.</p>
+            </div>
+            <div style="flex: 1;">
+                <img src="heavy-equipment-storage-preventing-wear-and-tear-during-long-term-parking-1989029735.png" alt="About Us" style="width: 100%; border-radius: 10px;">
+            </div>
+        </div>
+
+        <!-- Services -->
+        <div style="flex: 1;">
+            <h2>Our Services</h2>
+            <p>We provide state-of-the-art facilities for heavy equipment storage, ensuring your assets are protected and ready for use.</p>
+            <h3>Storage Rates</h3>
+            <table style="width: 100%; border-collapse: collapse; margin-top: 20px;">
+                <thead>
+                    <tr style="background-color: #444; color: #fff;">
+                        <th style="padding: 10px; border: 1px solid #555;">Equipment Type</th>
+                        <th style="padding: 10px; border: 1px solid #555;">Examples</th>
+                        <th style="padding: 10px; border: 1px solid #555;">Monthly Rate</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td style="padding: 10px; border: 1px solid #555;">Small Equipment</td>
+                        <td style="padding: 10px; border: 1px solid #555;">Forklifts, Compact Loaders, Mini Excavators, Power Generators, Pressure Washers, Small Trailers</td>
+                        <td style="padding: 10px; border: 1px solid #555;">$150/month</td>
+                    </tr>
+                    <tr style="background-color: #333;">
+                        <td style="padding: 10px; border: 1px solid #555;">Medium Equipment</td>
+                        <td style="padding: 10px; border: 1px solid #555;">Backhoes, Skid Steers, Utility Vehicles, Medium-Sized Generators, Concrete Mixers</td>
+                        <td style="padding: 10px; border: 1px solid #555;">$250/month</td>
+                    </tr>
+                    <tr>
+                        <td style="padding: 10px; border: 1px solid #555;">Large Equipment</td>
+                        <td style="padding: 10px; border: 1px solid #555;">Bulldozers, Excavators, Wheel Loaders, Motor Graders, Large Generators</td>
+                        <td style="padding: 10px; border: 1px solid #555;">$400/month</td>
+                    </tr>
+                    <tr style="background-color: #333;">
+                        <td style="padding: 10px; border: 1px solid #555;">Extra-Large Equipment</td>
+                        <td style="padding: 10px; border: 1px solid #555;">Cranes, Heavy-Duty Trucks, Pavers, Large Trailers, Specialized Industrial Machinery</td>
+                        <td style="padding: 10px; border: 1px solid #555;">$600/month</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+    <!-- Heavy Equipment Section -->
+    <div class="section" style="background-color: #222; color: #fff; padding: 40px;">
+        <div style="text-align: center;">
+            <h2>Heavy Equipment Storage</h2>
+            <p>Our facilities are designed to accommodate a wide range of heavy equipment, ensuring your assets are stored securely and efficiently.</p>
+            <p>We understand the unique challenges of heavy equipment storage, including protection from environmental factors, theft prevention, and maintaining equipment readiness. Our state-of-the-art facilities are equipped with advanced security systems, spacious layouts, and easy access to ensure your equipment is always in optimal condition.</p>
+            <p>Whether you need short-term or long-term storage, we offer flexible solutions tailored to your specific needs. Our team of experts is dedicated to providing exceptional service and ensuring your equipment is handled with the utmost care.</p>
+            <p>To further ensure the safety of your assets, we provide round-the-clock armed security. Our trained security personnel are on-site 24/7, offering unparalleled protection and peace of mind for your valuable equipment.</p>
+        </div>
+    </div>
+
+    <!-- Footer Section -->
+    <footer>
+        <div>
+            <h2>Contact Us</h2>
+            <p>Get in touch with us to learn more about our services and how we can help your business.</p>
+            <p>Email: tarbertindustries@protonmail.com</p>
+            <p>Delta, PA</p>
+        </div>
+    </footer>
+</body>
+</html>
