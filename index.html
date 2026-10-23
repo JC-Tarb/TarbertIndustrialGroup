@@ -1,228 +1,389 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Tarbert Industrial Group</title>
-    <style>
-        /* General Styles */
-        body {
-            margin: 0;
-            font-family: 'Arial', sans-serif;
-            color: #fff;
-            background-color: #000;
-            overflow-x: hidden;
-            font-size: 18px; /* Increased base font size */
-        }
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Tarbert Industrial Group | Heavy Equipment Storage in Delta, PA</title>
+<meta name="description" content="Secure heavy equipment storage in Delta, PA with 24/7 security and 24/7 access. Flat monthly rates for small to extra-large equipment.">
+<meta name="theme-color" content="#14181c">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@600;700;800&family=Barlow:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{--steel:#14181c;--steel-2:#1c2228;--steel-3:#262e36;--line:#37414b;--concrete:#eceae4;--muted:#b0b8bf;--signal:#f5b324;--ok:#43d17a;
+--display:'Barlow Condensed','Arial Narrow',Impact,sans-serif;--body:'Barlow','Helvetica Neue',Arial,sans-serif;--ease:cubic-bezier(.2,.8,.2,1)}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth;scroll-padding-top:80px}
+body{margin:0;background:var(--steel);color:var(--concrete);font-family:var(--body);font-size:20px;line-height:1.6;-webkit-font-smoothing:antialiased;overflow-x:hidden}
+img,svg{max-width:100%;display:block}
+a{color:inherit}
+:focus-visible{outline:3px solid var(--signal);outline-offset:3px}
+h1,h2,h3{font-family:var(--display);font-weight:700;line-height:1;margin:0;letter-spacing:.01em}
+h2{font-size:clamp(2.7rem,6.5vw,4.2rem)}
+h3{font-size:2rem}
+p{margin:0 0 1em;max-width:60ch}
+.wrap{width:min(1180px,100% - 40px);margin-inline:auto}
+section{padding:110px 0}
+.hide{position:absolute;width:0;height:0;overflow:hidden}
 
-        h1, h2, h3 {
-            font-family: 'Impact', 'Arial Black', sans-serif;
-            font-weight: bold;
-        }
+/* progress + header */
+#prog{position:fixed;top:0;left:0;height:3px;width:100%;background:var(--signal);transform:scaleX(0);transform-origin:0 50%;z-index:50}
+header{position:sticky;top:0;z-index:40;background:rgba(20,24,28,.86);backdrop-filter:blur(12px);border-bottom:1px solid var(--line)}
+.bar{display:flex;align-items:center;justify-content:space-between;height:76px}
+.brand{font-family:var(--display);font-weight:800;font-size:1.6rem;letter-spacing:.06em;text-decoration:none;text-transform:uppercase;white-space:nowrap}
+.brand span{color:var(--signal)}
+nav{display:flex;align-items:center;gap:30px}
+nav a.l{text-decoration:none;font-weight:500;font-size:1.05rem;color:var(--muted);position:relative;padding:6px 0}
+nav a.l::after{content:"";position:absolute;left:0;bottom:0;height:2px;width:100%;background:var(--signal);transform:scaleX(0);transform-origin:0 50%;transition:transform .35s var(--ease)}
+nav a.l:hover{color:var(--concrete)}nav a.l:hover::after{transform:scaleX(1)}
+.fb{display:grid;place-items:center;width:48px;height:48px;border-radius:50%;border:1px solid var(--line);transition:transform .3s var(--ease),border-color .2s}
+.fb:hover{transform:translateY(-3px) rotate(-6deg);border-color:var(--signal)}
+.fb img{width:24px;height:24px;border-radius:5px}
+.btn{display:inline-flex;align-items:center;justify-content:center;min-height:54px;background:var(--signal);color:#16130a;font-weight:600;font-size:1.1rem;padding:0 32px;border-radius:4px;text-decoration:none;border:0;cursor:pointer;font-family:var(--body);position:relative;overflow:hidden;isolation:isolate;transition:transform .3s var(--ease),box-shadow .3s}
+.btn::before{content:"";position:absolute;inset:0;background:#fff;transform:translateX(-101%) skewX(-18deg);transition:transform .5s var(--ease);z-index:-1;opacity:.35}
+.btn:hover{transform:translateY(-3px);box-shadow:0 12px 28px -10px rgba(245,179,36,.55)}
+.btn:hover::before{transform:translateX(101%) skewX(-18deg)}
+.btn.ghost{background:transparent;color:var(--concrete);border:1px solid var(--line)}
+.btn.ghost:hover{border-color:var(--concrete);box-shadow:none}
+nav .btn{min-height:48px;padding:0 22px;font-size:1.02rem}
+.burger{display:none;width:48px;height:48px;border:1px solid var(--line);background:none;border-radius:50%;cursor:pointer;color:var(--concrete);padding:0}
+.burger span{display:block;width:20px;height:2px;background:currentColor;margin:5px auto;transition:transform .3s var(--ease),opacity .2s}
+.burger[aria-expanded=true] span:nth-child(1){transform:translateY(7px) rotate(45deg)}
+.burger[aria-expanded=true] span:nth-child(2){opacity:0}
+.burger[aria-expanded=true] span:nth-child(3){transform:translateY(-7px) rotate(-45deg)}
 
-        h1 {
-            font-size: 3rem; /* Increased heading size */
-        }
+/* hero */
+.hero{position:relative;min-height:calc(100svh - 76px);display:flex;align-items:flex-end;padding:0;isolation:isolate;overflow:hidden}
+.bg{position:absolute;inset:-6% 0;z-index:-2;background:url('2040165-4217050405.jpg') center/cover no-repeat;animation:kb 26s ease-in-out infinite alternate;will-change:transform}
+@keyframes kb{from{scale:1}to{scale:1.12}}
+.hero::after{content:"";position:absolute;inset:0;z-index:-1;background:linear-gradient(180deg,rgba(20,24,28,.5) 0%,rgba(20,24,28,.8) 60%,var(--steel) 100%)}
+.scan{position:absolute;inset:0;z-index:-1;pointer-events:none;overflow:hidden}
+.scan::before{content:"";position:absolute;top:0;bottom:0;width:30%;left:-30%;background:linear-gradient(90deg,transparent,rgba(245,179,36,.14),transparent);animation:sweep 7s linear infinite}
+@keyframes sweep{to{left:100%}}
+.hero .wrap{padding:120px 0 80px;display:grid;grid-template-columns:1.5fr 1fr;gap:56px;align-items:end}
+.hero h1{font-size:clamp(3.6rem,10vw,7.6rem);font-weight:800;text-transform:uppercase;line-height:.9}
+.ln{display:block;overflow:hidden;padding-bottom:.06em}
+.ln>span{display:block;transform:translateY(110%);animation:up 1s var(--ease) forwards;animation-delay:calc(var(--i)*.14s + .15s)}
+.ln:last-child>span{color:var(--signal)}
+@keyframes up{to{transform:none}}
+.hero .lead{font-size:1.5rem;color:#d9dde0;margin:28px 0 36px;max-width:44ch;opacity:0;animation:fade 1s var(--ease) .75s forwards}
+.cta{display:flex;gap:14px;flex-wrap:wrap;opacity:0;animation:fade 1s var(--ease) .95s forwards}
+@keyframes fade{from{opacity:0;transform:translateY(18px)}to{opacity:1;transform:none}}
+.panel{background:rgba(20,24,28,.84);border:1px solid var(--line);border-top:4px solid var(--signal);border-radius:6px;padding:28px 30px;backdrop-filter:blur(8px);opacity:0;animation:fade 1s var(--ease) 1.1s forwards}
+.status{display:flex;align-items:center;gap:12px;font-weight:600;font-size:1.15rem}
+.dot{width:13px;height:13px;border-radius:50%;background:var(--ok);animation:pulse 2.2s infinite}
+@keyframes pulse{0%{box-shadow:0 0 0 0 rgba(67,209,122,.6)}70%,100%{box-shadow:0 0 0 14px rgba(67,209,122,0)}}
+.clock{font-family:var(--display);font-size:4.2rem;font-weight:700;line-height:1;margin:16px 0 4px;font-variant-numeric:tabular-nums}
+.panel small{color:var(--muted);font-size:1rem}
+.panel dl{margin:22px 0 0;display:grid;grid-template-columns:auto 1fr;gap:10px 18px;font-size:1.05rem;border-top:1px solid var(--line);padding-top:18px}
+.panel dt{color:var(--muted)}.panel dd{margin:0;text-align:right;font-weight:500}
 
-        h2 {
-            font-size: 2.5rem; /* Increased subheading size */
-        }
+/* ticker */
+.ticker{border-block:1px solid var(--line);background:var(--steel-2);overflow:hidden;padding:20px 0}
+.track{display:flex;gap:0;width:max-content;animation:roll 38s linear infinite}
+.ticker:hover .track{animation-play-state:paused}
+.track span{font-family:var(--display);font-weight:700;font-size:1.9rem;text-transform:uppercase;letter-spacing:.06em;padding:0 28px;display:flex;align-items:center;gap:56px;white-space:nowrap}
+.track span::after{content:"";width:12px;height:12px;background:var(--signal);transform:rotate(45deg)}
+@keyframes roll{to{transform:translateX(-50%)}}
 
-        h3 {
-            font-size: 2rem; /* Increased smaller heading size */
-        }
+/* reveal */
+.js .rv{opacity:0;transform:translateY(36px);transition:opacity .9s var(--ease),transform .9s var(--ease);transition-delay:calc(var(--d,0)*.12s)}
+.js .rv.in{opacity:1;transform:none}
 
-        p {
-            font-size: 1.25rem; /* Increased paragraph size */
-            line-height: 1.8; /* Improved readability */
-        }
+/* security */
+.head{display:grid;grid-template-columns:1fr 1fr;gap:48px;align-items:end;margin-bottom:60px}
+.head p{color:var(--muted);margin:0;font-size:1.15rem}
+.security{background:var(--steel-2);border-bottom:1px solid var(--line)}
+.diagram{border:1px solid var(--line);border-radius:8px;background:linear-gradient(180deg,#171c21,#1d252c);margin-bottom:28px;overflow:hidden}
+.diagram svg{width:100%;height:auto}
+.beam{transform-origin:70px 56px;animation:look 6s ease-in-out infinite alternate}
+@keyframes look{from{transform:rotate(-14deg)}to{transform:rotate(22deg)}}
+.led{animation:blink 1.6s steps(2) infinite}
+@keyframes blink{50%{opacity:.2}}
+.feat{display:grid;grid-template-columns:repeat(3,1fr);border:1px solid var(--line);border-radius:8px;overflow:hidden}
+.feat article{padding:38px 32px;background:var(--steel);border-right:1px solid var(--line);transition:background .4s}
+.feat article:last-child{border-right:0}
+.feat article:hover{background:var(--steel-3)}
+.feat .ico{width:38px;height:38px;stroke:var(--signal);fill:none;stroke-width:1.7;stroke-linecap:round;stroke-linejoin:round;margin-bottom:24px;transition:transform .5s var(--ease)}
+.feat article:hover .ico{transform:scale(1.15) rotate(-6deg)}
+.feat h3{margin-bottom:12px}.feat p{color:var(--muted);margin:0;font-size:1.05rem}
 
-        .section {
-            height: auto; /* Adjusted to remove unnecessary spacing */
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            text-align: center;
-            padding: 40px 20px; /* Reduced padding for tighter layout */
-        }
+/* rates */
+.rates-grid{border-top:1px solid var(--line)}
+.row{position:relative;display:grid;grid-template-columns:150px 230px 1fr auto;gap:28px;align-items:center;padding:32px 16px;border-bottom:1px solid var(--line);isolation:isolate;transition:padding .45s var(--ease)}
+.row::before{content:"";position:absolute;inset:0;background:var(--steel-2);transform:scaleX(0);transform-origin:0 50%;transition:transform .55s var(--ease);z-index:-1;border-left:4px solid var(--signal)}
+.row:hover::before{transform:scaleX(1)}
+.row:hover{padding-left:28px}
+.eq{width:140px;height:92px;stroke:var(--signal);fill:none;stroke-width:2.2;stroke-linecap:round;stroke-linejoin:round;transition:transform .5s var(--ease)}
+.row:hover .eq{transform:translateX(8px) scale(1.06)}
+.row h3{font-size:2.3rem}
+.row p{margin:0;color:var(--muted);font-size:1.05rem}
+.price{font-family:var(--display);font-weight:700;font-size:3.4rem;text-align:right;white-space:nowrap}
+.price small{font-family:var(--body);font-size:1.05rem;font-weight:400;color:var(--muted)}
+.note{color:var(--muted);margin-top:26px}
 
-        .section img {
-            max-width: 100%;
-            height: auto;
-        }
+/* facility */
+.facility{padding-top:0}
+.split{display:grid;grid-template-columns:1.1fr 1fr;gap:60px;align-items:center}
+.frame{position:relative;border-radius:8px;overflow:hidden;border:1px solid var(--line);aspect-ratio:4/3}
+.frame img{width:100%;height:100%;object-fit:cover;transition:transform 1.4s var(--ease)}
+.frame:hover img{transform:scale(1.07)}
+.frame::after{content:"";position:absolute;left:0;bottom:0;height:5px;width:100%;background:var(--signal);transform:scaleX(0);transform-origin:0 50%;transition:transform 1.2s var(--ease) .3s}
+.rv.in .frame::after,.frame.in::after{transform:scaleX(1)}
+.facility p{font-size:1.15rem;color:var(--muted)}
+.checks{list-style:none;padding:0;margin:30px 0 0;display:grid;gap:16px}
+.checks li{display:flex;gap:16px;align-items:flex-start;font-size:1.15rem}
+.checks li::before{content:"";flex:none;width:24px;height:24px;margin-top:3px;border-radius:50%;background:var(--signal) url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 20 20'%3E%3Cpath d='M5.5 10.5l3 3 6-7' fill='none' stroke='%2316130a' stroke-width='2.2' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E") center/contain no-repeat}
 
-        .hero {
-            background: url('2040165-4217050405.jpg') no-repeat center center/cover;
-            color: #fff;
-            position: relative;
-        }
+/* contact */
+.contact{background:var(--steel-2);border-top:1px solid var(--line)}
+.contact .meta{display:grid;gap:22px;align-content:start}
+.contact .meta p{color:var(--muted);font-size:1.15rem}
+.contact .meta a.mail{font-size:1.4rem;font-weight:600;text-decoration:none;border-bottom:3px solid var(--signal);width:fit-content;word-break:break-all}
+.contact .meta span.k{display:block;color:var(--muted);font-size:1rem;margin-bottom:2px}
+.fblink{display:inline-flex;align-items:center;gap:14px;text-decoration:none;font-weight:600;font-size:1.15rem;width:fit-content}
+.fblink img{width:40px;height:40px;border-radius:8px;transition:transform .4s var(--ease)}
+.fblink:hover img{transform:rotate(-10deg) scale(1.12)}
+form{display:grid;gap:18px}
+label{display:grid;gap:8px;font-weight:500;font-size:1.05rem}
+input,select,textarea{font:inherit;font-size:1.05rem;color:var(--concrete);background:var(--steel);border:1px solid var(--line);border-radius:4px;padding:15px 16px;width:100%;transition:border-color .2s,box-shadow .3s}
+input:focus,select:focus,textarea:focus{outline:none;border-color:var(--signal);box-shadow:0 0 0 4px rgba(245,179,36,.18)}
+textarea{min-height:130px;resize:vertical}
+.two{display:grid;grid-template-columns:1fr 1fr;gap:18px}
+footer{padding:36px 0;border-top:1px solid var(--line);color:var(--muted);font-size:1rem}
+footer .wrap{display:flex;justify-content:space-between;align-items:center;gap:16px;flex-wrap:wrap}
 
-        .hero h1 {
-            font-size: 4rem;
-            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
-        }
-
-        .hero .scroll-indicator {
-            position: absolute;
-            bottom: 20px;
-            left: 50%;
-            transform: translateX(-50%);
-            font-size: 1.5rem; /* Increased scroll indicator size */
-            color: #fff;
-            animation: bounce 2s infinite;
-        }
-
-        @keyframes bounce {
-            0%, 100% {
-                transform: translate(-50%, 0);
-            }
-            50% {
-                transform: translate(-50%, -10px);
-            }
-        }
-
-        .about {
-            background-color: #111;
-        }
-
-        .services {
-            background-color: #222;
-        }
-
-        .contact {
-            background-color: #333;
-        }
-
-        /* Footer Styles */
-        footer {
-            background-color: #333;
-            color: #fff;
-            padding: 20px;
-            text-align: center;
-        }
-
-        /* Header Styles */
-        header {
-            background-color: #333;
-            color: #fff;
-            padding: 10px 20px;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-        }
-
-        .header-title {
-            font-size: 1.5rem;
-            font-weight: bold;
-        }
-
-        .header-icons {
-            display: flex;
-            gap: 15px;
-        }
-
-        .header-icons a {
-            color: #fff;
-            text-decoration: none;
-        }
-
-        .header-icons img {
-            width: 24px;
-            height: 24px;
-        }
-    </style>
+@media (max-width:960px){
+  body{font-size:19px}
+  section{padding:76px 0}
+  .burger{display:block}
+  nav{position:fixed;inset:76px 0 auto 0;background:rgba(20,24,28,.97);flex-direction:column;align-items:stretch;gap:0;padding:8px 20px 24px;border-bottom:1px solid var(--line);transform:translateY(-12px);opacity:0;visibility:hidden;transition:all .35s var(--ease)}
+  nav.open{transform:none;opacity:1;visibility:visible}
+  nav a.l{font-size:1.4rem;padding:18px 0;border-bottom:1px solid var(--line);color:var(--concrete)}
+  nav a.l::after{display:none}
+  nav .fb{margin:20px 0 0;width:56px;height:56px}
+  nav .btn{margin-top:16px;min-height:56px}
+  .hero .wrap,.head,.split{grid-template-columns:1fr}
+  .hero .wrap{gap:36px;padding:90px 0 48px}
+  .head{gap:20px;margin-bottom:40px}
+  .feat{grid-template-columns:1fr}
+  .feat article{border-right:0;border-bottom:1px solid var(--line)}.feat article:last-child{border-bottom:0}
+  .row{grid-template-columns:110px 1fr;gap:6px 20px;padding:28px 8px}
+  .row .eq{width:110px;height:72px;grid-row:span 2}
+  .row p{grid-column:2}
+  .price{grid-column:1/-1;text-align:left;font-size:3rem}
+  .clock{font-size:3.6rem}
+}
+@media (max-width:520px){.two{grid-template-columns:1fr}.brand{font-size:1.3rem}.hero .lead{font-size:1.3rem}.btn{width:100%}}
+@media (prefers-reduced-motion:reduce){
+  *,*::before,*::after{animation:none!important;transition:none!important;scroll-behavior:auto!important}
+  .ln>span,.hero .lead,.cta,.panel{transform:none;opacity:1}
+  .js .rv{opacity:1;transform:none}
+}
+</style>
 </head>
 <body>
-    <!-- Header Section -->
-    <header>
-        <div class="header-title">Tarbert Industrial Group</div>
-        <div class="header-icons">
-            <a href="https://www.facebook.com/profile.php?id=61582123003394" target="_blank">
-                <img src="f_logo_RGB-Blue_1024-3274466492.png" alt="Facebook" style="width: 24px; height: 24px;">
-            </a>
-        </div>
-    </header>
+<div id="prog" aria-hidden="true"></div>
 
-    <!-- Hero Section -->
-    <div class="section hero" style="background: url('2040165-4217050405.jpg') no-repeat center center/cover; position: relative;">
-        <div style="background-color: rgba(0, 0, 0, 0.6); padding: 40px; border-radius: 10px; position: relative; z-index: 2;">
-            <h1>TARBERT INDUSTRIAL GROUP</h1>
-            <p>Forging solutions that meet today’s industrial scale</p>
-            <p>Located in Delta, PA</p>
-            <div class="scroll-indicator">Scroll Down ↓</div>
+<!-- Equipment illustrations (inline SVG, no image files needed) -->
+<svg class="hide" aria-hidden="true">
+  <symbol id="forklift" viewBox="0 0 120 80"><path d="M24 58V30h34l6 14v14M30 30v-12h22v12M78 8v54M78 58h30M78 36h10M20 58h50"/><circle cx="34" cy="64" r="8"/><circle cx="62" cy="64" r="8"/><path d="M88 58v-8M98 58v-8"/></symbol>
+  <symbol id="skid" viewBox="0 0 120 80"><path d="M14 56V36h40l10 12h24v8M26 36V20h26l8 16M64 48L96 22l12 14-6 14"/><circle cx="30" cy="64" r="8"/><circle cx="62" cy="64" r="8"/><circle cx="92" cy="64" r="8"/></symbol>
+  <symbol id="dozer" viewBox="0 0 120 80"><rect x="12" y="52" width="64" height="18" rx="9"/><path d="M26 52V28h26l10 14v10M40 28V16h12M62 56L94 48M94 22v46M94 22l12 6M94 68l12-6"/></symbol>
+  <symbol id="crane" viewBox="0 0 120 80"><path d="M8 58h66v-12H8zM52 46L102 6M102 6v34M96 40h12v8H96M30 46V34h16"/><circle cx="22" cy="66" r="8"/><circle cx="56" cy="66" r="8"/></symbol>
+</svg>
+
+<header>
+  <div class="wrap bar">
+    <a class="brand" href="#top">Tarbert <span>Industrial</span> Group</a>
+    <button class="burger" id="burger" aria-label="Menu" aria-expanded="false" aria-controls="nav"><span></span><span></span><span></span></button>
+    <nav id="nav" aria-label="Main">
+      <a class="l" href="#security">Security &amp; access</a>
+      <a class="l" href="#rates">Rates</a>
+      <a class="l" href="#contact">Contact</a>
+      <a class="fb" href="https://www.facebook.com/profile.php?id=61582123003394" target="_blank" rel="noopener" aria-label="Tarbert Industrial Group on Facebook"><img src="f_logo_RGB-Blue_1024-3274466492.png" alt=""></a>
+      <a class="btn" href="#contact">Get a quote</a>
+    </nav>
+  </div>
+</header>
+
+<main id="top">
+  <div class="hero">
+    <div class="bg" id="bg"></div>
+    <div class="scan" aria-hidden="true"></div>
+    <div class="wrap">
+      <div>
+        <h1><span class="ln" style="--i:0"><span>Heavy equipment,</span></span><span class="ln" style="--i:1"><span>locked down</span></span><span class="ln" style="--i:2"><span>24/7</span></span></h1>
+        <p class="lead">Secure storage in Delta, PA. Monitored around the clock, and open to you whenever the job calls.</p>
+        <div class="cta">
+          <a class="btn" href="#contact">Reserve a space</a>
+          <a class="btn ghost" href="#rates">See monthly rates</a>
         </div>
-        <div style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; background-color: rgba(0, 0, 0, 0.5); z-index: 1;"></div>
+      </div>
+      <aside class="panel" aria-label="Access hours">
+        <div class="status"><span class="dot" aria-hidden="true"></span> Access is open</div>
+        <div class="clock" id="clock">--:--</div>
+        <small>Delta, PA local time</small>
+        <dl>
+          <dt>Customer access</dt><dd>24 hours, 7 days</dd>
+          <dt>Monitoring</dt><dd>24 hours, 7 days</dd>
+          <dt>Location</dt><dd>Delta, Pennsylvania</dd>
+        </dl>
+      </aside>
     </div>
+  </div>
 
-    <!-- About and Services Section -->
-    <div class="section" style="display: flex; flex-wrap: wrap; align-items: flex-start; gap: 40px; padding: 40px; background-color: #111; color: #fff;">
-        <!-- About Us -->
-        <div style="display: flex; align-items: center; gap: 20px; flex-wrap: wrap; padding: 40px; background-color: #111; color: #fff;">
-            <div style="flex: 1;">
-                <h2>About Us</h2>
-                <p>Tarbert Industrial Group specializes in heavy equipment storage and comprehensive asset protection. We are committed to delivering solutions that meet the demands of modern industry.</p>
-                <p>Our facilities are equipped with cutting-edge technology to ensure the safety and security of your valuable assets. With years of experience in the industry, we pride ourselves on our reliability and dedication to excellence.</p>
-                <p>We offer 24-hour security and advanced asset protection measures, ensuring your equipment is safeguarded around the clock. Our services are not only top-notch but also affordable, making us the trusted choice for businesses of all sizes.</p>
-            </div>
-        </div>
+  <div class="ticker" aria-hidden="true"><div class="track" id="track"></div></div>
 
-        <!-- Services -->
-        <div style="flex: 1;">
-            <h2>Our Services</h2>
-            <p>We provide state-of-the-art facilities for heavy equipment storage, ensuring your assets are protected and ready for use.</p>
-            <h3>Storage Rates</h3>
-            <table style="width: 100%; border-collapse: collapse; margin-top: 20px;">
-                <thead>
-                    <tr style="background-color: #444; color: #fff;">
-                        <th style="padding: 10px; border: 1px solid #555;">Equipment Type</th>
-                        <th style="padding: 10px; border: 1px solid #555;">Examples</th>
-                        <th style="padding: 10px; border: 1px solid #555;">Monthly Rate</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr>
-                        <td style="padding: 10px; border: 1px solid #555;">Small Equipment</td>
-                        <td style="padding: 10px; border: 1px solid #555;">Forklifts, Compact Loaders, Mini Excavators, Power Generators, Pressure Washers, Small Trailers</td>
-                        <td style="padding: 10px; border: 1px solid #555;">$150/month</td>
-                    </tr>
-                    <tr style="background-color: #333;">
-                        <td style="padding: 10px; border: 1px solid #555;">Medium Equipment</td>
-                        <td style="padding: 10px; border: 1px solid #555;">Backhoes, Skid Steers, Utility Vehicles, Medium-Sized Generators, Concrete Mixers</td>
-                        <td style="padding: 10px; border: 1px solid #555;">$250/month</td>
-                    </tr>
-                    <tr>
-                        <td style="padding: 10px; border: 1px solid #555;">Large Equipment</td>
-                        <td style="padding: 10px; border: 1px solid #555;">Bulldozers, Excavators, Wheel Loaders, Motor Graders, Large Generators</td>
-                        <td style="padding: 10px; border: 1px solid #555;">$400/month</td>
-                    </tr>
-                    <tr style="background-color: #333;">
-                        <td style="padding: 10px; border: 1px solid #555;">Extra-Large Equipment</td>
-                        <td style="padding: 10px; border: 1px solid #555;">Cranes, Heavy-Duty Trucks, Pavers, Large Trailers, Specialized Industrial Machinery</td>
-                        <td style="padding: 10px; border: 1px solid #555;">$600/month</td>
-                    </tr>
-                </tbody>
-            </table>
-        </div>
+  <section class="security" id="security">
+    <div class="wrap">
+      <div class="head rv">
+        <h2>Security that never clocks out</h2>
+        <p>Your equipment is a major investment. We protect it with layered security and give you access on your schedule, not ours.</p>
+      </div>
+
+      <div class="diagram rv" role="img" aria-label="Illustration of a fenced yard with a gate, camera, and stored equipment">
+        <svg viewBox="0 0 900 300">
+          <defs><linearGradient id="bm" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#f5b324" stop-opacity=".5"/><stop offset="1" stop-color="#f5b324" stop-opacity="0"/></linearGradient></defs>
+          <rect y="250" width="900" height="50" fill="#10141a"/>
+          <path d="M0 250H900" stroke="#37414b" stroke-width="2"/>
+          <g stroke="#4a5662" stroke-width="3"><path d="M20 250V150M110 250V150M200 250V150M290 250V150M380 250V150M470 250V150M560 250V150M650 250V150M740 250V150M830 250V150M880 250V150"/><path d="M20 160H880M20 200H880" stroke-width="2"/></g>
+          <g stroke="#f5b324" stroke-width="3" fill="none"><path d="M380 250V130M470 250V130M380 130H470"/><path d="M395 250V150M410 250V150M425 250V150M440 250V150M455 250V150" stroke-width="2" opacity=".7"/></g>
+          <rect x="478" y="196" width="20" height="30" rx="3" fill="#1c2228" stroke="#f5b324" stroke-width="2"/><circle class="led" cx="488" cy="205" r="3" fill="#43d17a"/>
+          <path d="M66 20v36" stroke="#4a5662" stroke-width="4"/><path d="M40 56h58" stroke="#4a5662" stroke-width="4"/>
+          <g class="beam"><path d="M70 56L-10 250H190z" fill="url(#bm)"/></g>
+          <rect x="56" y="48" width="30" height="16" rx="3" fill="#f5b324"/><circle class="led" cx="62" cy="52" r="2.5" fill="#c0392b"/>
+          <g transform="translate(150 175) scale(.62)" stroke="#8d99a5" fill="none" stroke-width="3.2" stroke-linecap="round" stroke-linejoin="round"><use href="#dozer" width="120" height="80"/></g>
+          <g transform="translate(250 175) scale(.62)" stroke="#8d99a5" fill="none" stroke-width="3.2" stroke-linecap="round" stroke-linejoin="round"><use href="#forklift" width="120" height="80"/></g>
+          <g transform="translate(560 160) scale(.9)" stroke="#8d99a5" fill="none" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><use href="#crane" width="120" height="80"/></g>
+          <g transform="translate(700 175) scale(.8)" stroke="#8d99a5" fill="none" stroke-width="2.8" stroke-linecap="round" stroke-linejoin="round"><use href="#skid" width="120" height="80"/></g>
+          <text x="425" y="116" text-anchor="middle" fill="#f5b324" font-family="Barlow Condensed,Arial Narrow,sans-serif" font-weight="700" font-size="22" letter-spacing="2">SECURED GATE</text>
+        </svg>
+      </div>
+
+      <div class="feat">
+        <article class="rv" style="--d:0">
+          <svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M3 8l9-4 9 4v4c0 5-3.5 8-9 9-5.5-1-9-4-9-9z"/><path d="M9 12l2 2 4-4"/></svg>
+          <h3>24/7 monitoring</h3>
+          <p>Round-the-clock security and asset protection watch over the facility day and night, every day of the year.</p>
+        </article>
+        <article class="rv" style="--d:1">
+          <svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><rect x="4" y="10" width="16" height="11" rx="2"/><path d="M8 10V7a4 4 0 018 0v3"/><circle cx="12" cy="15.5" r="1.3"/></svg>
+          <h3>Controlled entry</h3>
+          <p>Only authorized customers get in. Secure entry keeps your equipment away from anyone who doesn’t belong.</p>
+        </article>
+        <article class="rv" style="--d:2">
+          <svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3.5 2"/></svg>
+          <h3>24/7 access</h3>
+          <p>Early start or late callout, pick up and return your equipment at any hour. No appointments, no waiting on office hours.</p>
+        </article>
+      </div>
     </div>
+  </section>
 
-    <!-- Heavy Equipment Section -->
-    <div class="section" style="background-color: #222; color: #fff; padding: 40px;">
-        <div style="text-align: center;">
-            <h2>Heavy Equipment Storage</h2>
-            <p>Our facilities are designed to accommodate a wide range of heavy equipment, ensuring your assets are stored securely and efficiently.</p>
-            <p>We understand the unique challenges of heavy equipment storage, including protection from environmental factors, theft prevention, and maintaining equipment readiness. Our state-of-the-art facilities are equipped with advanced security systems, spacious layouts, and easy access to ensure your equipment is always in optimal condition.</p>
-            <p>Whether you need short-term or long-term storage, we offer flexible solutions tailored to your specific needs. Our team of experts is dedicated to providing exceptional service and ensuring your equipment is handled with the utmost care.</p>
-        </div>
+  <section id="rates">
+    <div class="wrap">
+      <div class="head rv">
+        <h2>Simple monthly rates</h2>
+        <p>Pick the size class that fits your equipment. Flat pricing, short-term or long-term, with room for everything from compact loaders to cranes.</p>
+      </div>
+      <div class="rates-grid">
+        <div class="row rv"><svg class="eq" viewBox="0 0 120 80" aria-hidden="true"><use href="#forklift"/></svg><h3>Small</h3><p>Forklifts, compact loaders, mini excavators, power generators, pressure washers, small trailers</p><div class="price">$150<small> /month</small></div></div>
+        <div class="row rv"><svg class="eq" viewBox="0 0 120 80" aria-hidden="true"><use href="#skid"/></svg><h3>Medium</h3><p>Backhoes, skid steers, utility vehicles, medium-sized generators, concrete mixers</p><div class="price">$250<small> /month</small></div></div>
+        <div class="row rv"><svg class="eq" viewBox="0 0 120 80" aria-hidden="true"><use href="#dozer"/></svg><h3>Large</h3><p>Bulldozers, excavators, wheel loaders, motor graders, large generators</p><div class="price">$400<small> /month</small></div></div>
+        <div class="row rv"><svg class="eq" viewBox="0 0 120 80" aria-hidden="true"><use href="#crane"/></svg><h3>Extra-large</h3><p>Cranes, heavy-duty trucks, pavers, large trailers, specialized industrial machinery</p><div class="price">$600<small> /month</small></div></div>
+      </div>
+      <p class="note rv">Not sure which class your machine falls into? Send us the make and model and we’ll confirm.</p>
     </div>
+  </section>
 
-    <!-- Footer Section -->
-    <footer>
-        <div>
-            <h2>Contact Us</h2>
-            <p>Get in touch with us to learn more about our services and how we can help your business.</p>
-            <p>Email: tarbertindustries@protonmail.com</p>
-            <p>Delta, PA</p>
+  <section class="facility">
+    <div class="wrap split">
+      <div class="frame rv"><img src="heavy-equipment-storage-preventing-wear-and-tear-during-long-term-parking-1989029735.png" alt="Heavy equipment parked in secure storage" loading="lazy"></div>
+      <div class="rv" style="--d:1">
+        <h2>Built for equipment that works hard</h2>
+        <p style="margin-top:22px">We handle the problems that come with leaving heavy machinery idle: theft, weather exposure, and the wear that comes from long-term parking. Spacious layouts keep every machine easy to reach.</p>
+        <ul class="checks">
+          <li>Flexible short-term and long-term storage</li>
+          <li>Space for everything from generators to cranes</li>
+          <li>Easy in and out, so equipment is always ready to work</li>
+          <li>Affordable rates for businesses of every size</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <section class="contact" id="contact">
+    <div class="wrap split">
+      <div class="meta rv">
+        <h2>Reserve your space</h2>
+        <p>Tell us what you’re storing and we’ll reply with availability and next steps.</p>
+        <div><span class="k">Email</span><a class="mail" href="mailto:tarbertindustries@protonmail.com">tarbertindustries@protonmail.com</a></div>
+        <div><span class="k">Location</span>Delta, PA</div>
+        <a class="fblink" href="https://www.facebook.com/profile.php?id=61582123003394" target="_blank" rel="noopener"><img src="f_logo_RGB-Blue_1024-3274466492.png" alt="">Follow us on Facebook</a>
+      </div>
+      <form id="quote" class="rv" style="--d:1">
+        <div class="two">
+          <label>Name<input name="name" autocomplete="name" required></label>
+          <label>Phone or email<input name="contact" autocomplete="email" required></label>
         </div>
-    </footer>
+        <label>Equipment size
+          <select name="size"><option>Small ($150/month)</option><option>Medium ($250/month)</option><option>Large ($400/month)</option><option>Extra-large ($600/month)</option><option>Not sure</option></select>
+        </label>
+        <label>What are you storing?<textarea name="details" placeholder="Make, model, how long you need storage"></textarea></label>
+        <button class="btn" type="submit">Send request</button>
+      </form>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="wrap">
+    <span>&copy; <span id="yr">2026</span> Tarbert Industrial Group. Delta, PA.</span>
+    <a href="https://www.facebook.com/profile.php?id=61582123003394" target="_blank" rel="noopener">Facebook</a>
+  </div>
+</footer>
+
+<script>
+(function(){
+  document.documentElement.classList.add('js');
+  var d=document,reduce=matchMedia('(prefers-reduced-motion:reduce)').matches;
+
+  // clock
+  var c=d.getElementById('clock');
+  function tick(){var o={hour:'numeric',minute:'2-digit'};try{o.timeZone='America/New_York';c.textContent=new Date().toLocaleTimeString('en-US',o)}catch(e){delete o.timeZone;c.textContent=new Date().toLocaleTimeString([],o)}}
+  tick();setInterval(tick,15000);
+  d.getElementById('yr').textContent=new Date().getFullYear();
+
+  // ticker
+  var items=['Excavators','Cranes','Forklifts','Bulldozers','Skid steers','Generators','Wheel loaders','Motor graders','Pavers','Trailers'];
+  var h=items.map(function(t){return '<span>'+t+'</span>'}).join('');
+  d.getElementById('track').innerHTML=h+h;
+
+  // menu
+  var b=d.getElementById('burger'),n=d.getElementById('nav');
+  b.addEventListener('click',function(){var o=n.classList.toggle('open');b.setAttribute('aria-expanded',o)});
+  n.addEventListener('click',function(e){if(e.target.closest('a')){n.classList.remove('open');b.setAttribute('aria-expanded',false)}});
+
+  // reveal on scroll
+  var els=d.querySelectorAll('.rv');
+  if('IntersectionObserver' in window&&!reduce){
+    var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target)}})},{threshold:.15,rootMargin:'0px 0px -6% 0px'});
+    els.forEach(function(el){io.observe(el)});
+  }else{els.forEach(function(el){el.classList.add('in')})}
+
+  // progress bar + hero parallax
+  var p=d.getElementById('prog'),bg=d.getElementById('bg'),t=false;
+  function onS(){var y=scrollY,m=d.documentElement.scrollHeight-innerHeight;p.style.transform='scaleX('+(m>0?y/m:0)+')';if(!reduce&&y<innerHeight*1.2)bg.style.translate='0 '+(y*.22)+'px';t=false}
+  addEventListener('scroll',function(){if(!t){t=true;requestAnimationFrame(onS)}},{passive:true});onS();
+
+  // quote form
+  d.getElementById('quote').addEventListener('submit',function(e){
+    e.preventDefault();var f=e.target;
+    var body='Name: '+f.name.value+'\nContact: '+f.contact.value+'\nEquipment size: '+f.size.value+'\n\n'+f.details.value;
+    location.href='mailto:tarbertindustries@protonmail.com?subject='+encodeURIComponent('Storage request')+'&body='+encodeURIComponent(body);
+  });
+})();
+</script>
 </body>
 </html>
